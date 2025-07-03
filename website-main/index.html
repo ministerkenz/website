@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Kenzo's website</title>
+    <link rel="icon" href="studyingfav.png" type="image/png">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Kenzo</a>
+        <!-- Mobile menu toggle button -->
+        <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+            <span></span>
+            <span></span>
+            <spans></spans>
+        </div>
+    </header>
+
+<div>
+     <audio id="audio">
+        <source src="select.mp3" type="audio/mp3">
+     </audio>
+</div>
+
+<div>
+     <audio id="audio2">
+        <source src="pop.mp3" type="audio/mp3">
+     </audio>
+</div>
+
+<!-- Background Music -->
+<div>
+     <audio id="backgroundMusic" loop>
+        <source src="coffee time.mp3" type="audio/mp3">
+     </audio>
+</div>
+
+<!-- Music Control Character (Bottom Right) -->
+<div class="music-character">
+    <img id="creucat-gif" src="creucat-still.png" alt="Creucat" class="creucat" title="Click to play/pause music">
+</div>
+
+    <section class="home">
+        <div class="home-img">
+            <img id="cycling-image" src="default.png" alt="Kenzo">
+        </div>
+        <div class="home-content">
+            <h1>Hi, It's<span> Kenzo</span></h1>
+            <h3 class="typing-text">I'm a <span></span></h3>
+        </div>
+    </section>
+
+    <!-- Cloud Navigation -->
+    <div class="cloud-nav">
+        <!-- Home Cloud -->
+        <div class="cloud-button cloud-home" data-section="home">
+            <svg viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20,40 Q10,20 25,20 Q30,10 45,15 Q60,5 75,15 Q90,10 85,25 Q95,30 85,40 Z" 
+                      fill="#ffffff" stroke="#ddd" stroke-width="1" opacity="0.9"/>
+            </svg>
+            <div class="cloud-text">Contact</div>
+        </div>
+
+        <!-- About Me Cloud -->
+        <div class="cloud-button cloud-about" data-section="about">
+            <svg viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15,35 Q5,15 20,15 Q25,5 40,10 Q55,0 70,10 Q85,5 80,20 Q90,25 80,35 Z" 
+                      fill="#f0f8ff" stroke="#ddd" stroke-width="1" opacity="0.9"/>
+            </svg>
+            <div class="cloud-text">About</div>
+        </div>
+
+        <!-- Education Cloud -->
+        <div class="cloud-button cloud-education" data-section="education">
+            <svg viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+                <path d="M25,45 Q15,25 30,25 Q35,15 50,20 Q65,10 80,20 Q95,15 90,30 Q100,35 90,45 Z" 
+                      fill="#e6f3ff" stroke="#ddd" stroke-width="1" opacity="0.9"/>
+            </svg>
+            <div class="cloud-text">Education</div>
+        </div>
+
+        <!-- Work Cloud -->
+        <div class="cloud-button cloud-work" data-section="work">
+            <svg viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18,42 Q8,22 23,22 Q28,12 43,17 Q58,7 73,17 Q88,12 83,27 Q93,32 83,42 Z" 
+                      fill="#f5f5ff" stroke="#ddd" stroke-width="1" opacity="0.9"/>
+            </svg>
+            <div class="cloud-text">Work</div>
+        </div>
+    </div>
+
+    <!-- Cloud Content Modals -->
+    <div class="cloud-overlay"></div>
+
+    <!-- Contact Me Content -->
+    <div class="cloud-content" id="home-content">
+        <span class="close-cloud">&times;</span>
+        <h2>🏠 Contact Me</h2>
+        <p>If you ever have the need to contact me for work, questioning, or just to say hey. Always feel free to send me an Email or DM </p>
+        <p><strong>Email:</strong> <a href="mailto:kommoken@gmail.com">kommoken@gmail.com</a></p>
+        <img src="overwhelming joy.png" alt="Home banner">
+        <p><strong>SOCIALS:</strong></p>
+         <div class="social-icons">
+                <a href="https://www.youtube.com/@backupmann9307" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://github.com/ministerkenz" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.snapchat.com/k.yubitani/" target="_blank" rel="noopener"><i class="fa-brands fa-snapchat"></i></a>
+                <a href="https://www.instagram.com/k.yubitani/" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+    </div>
+
+    <!-- About Me Content -->
+    <div class="cloud-content" id="about-content">
+        <span class="close-cloud">&times;</span>
+        <h2>👨‍💻 About Me</h2>
+        <div class="about-header">
+            <img src="ken.jpg" alt="Kenzo" class="profile-image">
+            <div class="profile-text">
+                <h3>Kenzo Yubitani</h3>
+                <div class="japanese-text">けんぞう ゆびたに</div>
+            </div>
+        </div>
+        <p>Hi! I'm Kenzo, a passionate student and aspiring developer. I'm currently attending Lower Merion High School and have been coding for 4 years now.</p>
+        <p>I'm half black half japanese and proud of my diverse background. When I'm not coding, you can find me gaming with my friends or trying to draw something new.</p>
+        <p>I love trying to do new things as well which made me start to work on this website.</p>
+    </div>
+
+    <!-- Education Content -->
+    <div class="cloud-content" id="education-content">
+        <span class="close-cloud">&times;</span>
+        <h2>🎓 Education</h2>
+        <img src="districtlogo.png" alt="Education" class="education-logo">
+        <p><strong>Current:</strong> Student at Lower Merion High School</p>
+        <img src="sju.png" alt="Saint Joseph's University" class="education-logo">
+        <p><strong>Soon to be:</strong> SJU (Saint Joseph's University) Student</p>
+        <p>Throughout my high school career, I've focused on building strong foundations in computer science. I've participated in various coding competitions and tech-related extracurricular activities.</p>
+        <p>My 4 years of coding experience have given me proficiency in multiple programming languages and frameworks, preparing me for higher education in computer science.</p>
+    </div>
+
+    <!-- Work Content -->
+    <div class="cloud-content" id="work-content">
+        <span class="close-cloud">&times;</span>
+        <h2>💼 Work & Projects</h2>
+        <div class="project-images">
+            <img src="sensei.png" alt="Sensei App Project" class="project-image">
+            <img src="pokimon.png" alt="Pokemon API Project" class="project-image">
+        </div>
+         <iframe width="560" height="315" src="https://www.youtube.com/embed/GcOJFVVFods?si=h9RFDVR0YPwpP8pM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <p><strong>YouTube Creator:</strong> I'm now starting my youtube journey by uploading my website building process on youtube to help other learn a little something about coding.</p>
+        <p><strong>Coding Projects:</strong> Over my 4 years of coding, I've worked on various projects including web development, mobile apps, and game creation. </p>
+        <p>I have created projects like Sensei which is an app that helps with daily tasks giving new opportunities, and an app that uses an API to give info on a certain pokémon</p>
+        <p><strong>Skills:</strong> HTML, CSS, JavaScript, Swift, and various other programming languages and frameworks.</p>
+        <p>As an aspiring influencer in the tech space, I'm always working on new projects and sharing my knowledge with the community.</p>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+    var audio = document.getElementById('audio');
+    var audio2 = document.getElementById('audio2');
+    audio.volume = 0.2; // Set volume to 20% (adjust as needed)
+    audio2.volume = 0.2;
+
+    // Play sound when any cloud button is clicked
+    document.querySelectorAll('.cloud-button').forEach(function(cloudBtn) {
+        cloudBtn.addEventListener('click', function() {
+            audio.currentTime = 0;
+            audio.play().catch(e => console.log('Audio play failed:', e));
+        });
+    });
+
+    // Play pop.mp3 when any cloud is closed
+    function playPopSound() {
+        audio2.currentTime = 0;
+        audio2.play().catch(e => console.log('Audio play failed:', e));
+    }
+
+    document.querySelectorAll('.close-cloud').forEach(function(closeBtn) {
+        closeBtn.addEventListener('click', playPopSound);
+    });
+
+    // Play pop.mp3 when overlay is clicked
+    document.querySelector('.cloud-overlay').addEventListener('click', playPopSound);
+
+    // Play pop.mp3 when Esc is pressed
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            playPopSound();
+        }
+    });
+</script>
+
+</body>
+</html>
