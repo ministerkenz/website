@@ -16,7 +16,7 @@ html{
 }
 
 body {
-    background: url('background.jpg') center center fixed;
+    background: url('assets/yoshi.gif') center center fixed;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;

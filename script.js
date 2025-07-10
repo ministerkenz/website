@@ -89,13 +89,14 @@ cloudButtons.forEach(button => {
 
 // Image cycling functionality
 const imageArray = [
-    'default.png',
-    'studying.png',
-    'forgetful.png',
-    'angry.png',
-    'overwhelming joy.png',
-    'sad.png',
-    'disgust.png'
+    'assets/default.png',
+    'assets/studying.png',
+    'assets/forgetful.png',
+    'assets/angry.png',
+    'assets/overwhelming joy.png',
+    'assets/sad.png',
+    'assets/disgust.png',
+    'assets/greedy.png'
 ];
 
 let currentImageIndex = 0;
