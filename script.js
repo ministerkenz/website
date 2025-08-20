@@ -87,6 +87,115 @@ cloudButtons.forEach(button => {
     }, { passive: true });
 });
 
+//Image track functionality
+const track = document.getElementById("image-track");
+
+window.onmousedown = e => {
+    track.dataset.mouseDownAt = e.clientX;
+}
+
+window.onmouseup = () => {
+    track.dataset.mouseDownAt = "0";
+    track.dataset.prevPercentage = track.dataset.percentage;
+}
+
+window.onmousemove = e => {
+    if(track.dataset.mouseDownAt === "0") return;
+
+    const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
+        maxDelta = window.innerWidth / 2;
+
+    const percentage = (mouseDelta / maxDelta) * -100;
+    let nextPercentage = parseFloat(track.dataset.prevPercentage) + percentage;
+   
+    nextPercentage = Math.min(nextPercentage, 0);
+    nextPercentage = Math.max(nextPercentage, -100);
+
+    track.dataset.percentage = nextPercentage;
+
+    track.animate({
+        transform: `translate(${nextPercentage}%, -50%)`
+    }, { duration: 1200, fill: "forwards"});
+
+    for(const image of track.getElementsByClassName("image")){
+        image.animate({
+            objectPosition: `${100 + nextPercentage}% center`
+        }, { duration: 1200, fill: "forwards"});
+    }
+}
+
+const fadeZoneWidth = window.innerWidth * 0.1; // 10% of screen width
+
+
+function updateImageOpacity() {
+    const trackRect = track.getBoundingClientRect();
+    const images = track.querySelectorAll(".image");
+    const windowWidth = window.innerWidth;
+
+    const fadeZoneWidth = 200; // pixels from start/end of track to begin fading
+
+    images.forEach(image => {
+        const imgRect = image.getBoundingClientRect();
+        const imgLeft = imgRect.left;
+        const imgRight = imgRect.right;
+
+        let opacity = 1;
+
+        // Fade near the left edge
+        if (imgLeft < fadeZoneWidth) {
+            opacity = (imgLeft / fadeZoneWidth);
+        }
+
+        // Fade near the right edge
+        else if (imgRight > windowWidth - fadeZoneWidth) {
+            opacity = (windowWidth - imgRight) / fadeZoneWidth;
+        }
+
+        // Clamp to 0–1
+        opacity = Math.max(0, Math.min(1, opacity));
+
+        image.style.opacity = opacity;
+    });
+}
+
+
+// Update opacity continuously with scroll/drag
+window.onmousemove = e => {
+    if(track.dataset.mouseDownAt === "0") return;
+
+    const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX;
+    const maxDelta = window.innerWidth / 2;
+
+    const percentage = (mouseDelta / maxDelta) * -100;
+    let nextPercentage = parseFloat(track.dataset.prevPercentage) + percentage;
+   
+    nextPercentage = Math.min(nextPercentage, 0);
+    nextPercentage = Math.max(nextPercentage, -100);
+
+    track.dataset.percentage = nextPercentage;
+
+    track.animate({
+        transform: `translate(${nextPercentage}%, -50%)`
+    }, { duration: 1200, fill: "forwards"});
+
+    for(const image of track.getElementsByClassName("image")){
+        image.animate({
+            objectPosition: `${100 + nextPercentage}% center`
+        }, { duration: 1200, fill: "forwards"});
+    }
+
+    updateImageOpacity();
+};
+
+// Also update on resize to reposition correctly
+window.addEventListener('resize', updateImageOpacity);
+
+window.addEventListener('load', updateImageOpacity);
+
+
+
+
+
 // Image cycling functionality
 const imageArray = [
     'assets/default.png',
